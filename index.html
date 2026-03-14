@@ -1,22 +1,173 @@
-<label style="color: black;">العنوان بالتفصيل</label>
-            <input type="text" name="المدينة" placeholder="ادخل اسم المدينة" required>
-            <input type="text" name="الحي" placeholder="ادخل اسم الحي" required>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز استلام الرسائل</title>
+    <style>
+        /* إعدادات الخط والألوان الأساسية */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-color: #ffffff;
+            --accent-color: #ffcc33;
+        }
 
-            <button type="submit">إرسال الآن</button>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--primary-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .contact-container {
+            background: var(--secondary-color);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        /* تنسيق الحقول */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        textarea, input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            box-sizing: border-box; /* لضمان عدم خروج الحواف */
+            font-size: 16px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        textarea:focus, input:focus, select:focus {
+            border-color: #764ba2;
+            box-shadow: 0 0 8px rgba(118, 75, 162, 0.2);
+        }
+
+        /* تنسيق الصفوف (المدخلات المزدوجة) */
+        .row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        button {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* تحسين العرض على الهواتف */
+        @media (max-width: 480px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <h2>تواصل معنا</h2>
+        
+        <form action="https://formsubmit.co/alshftmhmwd9@gmail.com" method="post">
+            
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="رسالة جديدة من الموقع!">
+
+            <div class="form-group">
+                <label>نص الرسالة</label>
+                <textarea name="الرسالة" rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>الاسم</label>
+                    <input type="text" name="الاسم" placeholder="مثال: محمود" required>
+                </div>
+                <div class="form-group">
+                    <label>رقم الهاتف</label>
+                    <input type="tel" name="الهاتف" placeholder="0123456789">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>نوع الطلب</label>
+                <select name="نوع_الطلب" required>
+                    <option value="" disabled selected>اختر خياراً...</option>
+                    <option value="خيار 1">خيار 1</option>
+                    <option value="خيار 2">خيار 2</option>
+                    <option value="خيار 3">خيار 3</option>
+                    <option value="خيار 4">خيار 4</option>
+                    <option value="خيار 5">خيار 5</option>
+                    <option value="خيار 6">خيار 6</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>قسم المتابعة</label>
+                <select name="القسم" required>
+                    <option value="" disabled selected>اختر خياراً...</option>
+                    <option value="خيار 1">خيار 1</option>
+                    <option value="خيار 2">خيار 2</option>
+                    <option value="خيار 3">خيار 3</option>
+                    <option value="خيار 4">خيار 4</option>
+                    <option value="خيار 5">خيار 5</option>
+                    <option value="خيار 6">خيار 6</option>
+                </select>
+            </div>
+
+            <button type="submit">إرسال البيانات</button>
+
         </form>
-
-        <div style="margin-top: 30px;">
-            <a href="https://www.facebook.com/profile.php?id=100077831043049" class="contact-link">
-                اضغط هنا للتواصل مع مصمم الموقع
-            </a>
-            <br>
-            <img src="img/454821691_1220907112266501_53388397050845476_n.jpg" alt="صورة المصمم" style="max-width: 100%; border-radius: 10px;">
-        </div>
     </div>
-
-    <footer>
-        <h2>@ موقع البحير الرسمي 2025</h2>
-    </footer>
 
 </body>
 </html>
